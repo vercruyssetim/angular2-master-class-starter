@@ -142,5 +142,6 @@ export const CONTACT_DATA = [
     .withStreet('9791 grafton street')
     .withZip('30165')
     .withCity('Galway')
-    .withCountry('London').build()
+    .withCountry('London')
+    .build()
 ];

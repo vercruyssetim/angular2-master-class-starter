@@ -19,7 +19,7 @@ var emailIsAvailable = (email) => {
 var app = express();
 
 app.use(cors());
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 
 app.get('/api/contacts', function (req, res) {
   res.json(multipleResponse(db));

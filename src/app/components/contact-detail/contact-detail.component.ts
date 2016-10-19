@@ -10,12 +10,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ContactDetailComponent implements OnInit {
   contact: Contact;
+  isOk: string;
 
   constructor(private contactService: ContactsService, private activatedRoute: ActivatedRoute){}
 
   ngOnInit(){
     let contactId = this.activatedRoute.snapshot.params['id'];
-    this.contact = this.contactService.getContact(contactId);
-    this.contactService.addView(contactId);
+    this.contactService.getContact(contactId).subscribe(contact => {
+      this.contact = contact;
+      this.contact.views++;
+      this.contactService.updateContact(this.contact)
+        .subscribe(contact => this.contact);
+    });
+
   }
 }
