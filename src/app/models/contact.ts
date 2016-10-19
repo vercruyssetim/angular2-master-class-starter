@@ -14,4 +14,5 @@ export interface Contact {
   website: string;
   image: string;
   address: Address;
+  views?: number;
 }

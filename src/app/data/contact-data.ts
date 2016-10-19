@@ -1,167 +1,146 @@
+import {ContactBuilder} from "../models/contactBuilder";
+
 export const CONTACT_DATA = [
-    {
-        id: 0,
-        name: 'Christoph Burgdorf',
-        email: 'christoph@thoughtram.io',
-        phone: '+49 000 1111',
-        birthday: '1984-01-02',
-        website: 'thoughtram.io',
-        image: '/assets/images/0.jpg',
-        address: {
-          street: 'thoughtram road 1',
-          zip: '65222',
-          city: 'Hanover',
-          country: 'Germany'
-        }
-    },
-    {
-        id: 1,
-        name: 'Pascal Precht',
-        email: 'pascal@thoughtram.io',
-        phone: '+49 000 222',
-        birthday: '1991-03-31',
-        website: 'thoughtram.io',
-        image: '/assets/images/1.jpg',
-        address: {
-          street: 'thoughtram road 1',
-          zip: '65222',
-          city: 'Hanover',
-          country: 'Germany'
-        }
-    },
-    {
-        id: 2,
-        name: 'Nicole Hansen',
-        email: 'who@car.es',
-        phone: '+49 000 333',
-        birthday: '1981-03-31',
-        website: '',
-        image: '/assets/images/3.jpg',
-        address: {
-          street: 'Who Cares Street 42',
-          zip: '65222',
-          city: 'Sun Funcisco',
-          country: 'United States'
-        }
-    },
-    {
-        id: 3,
-        name: 'Zoe Moore',
-        email: 'zoe@moore.com',
-        phone: '+49 000 000',
-        birthday: '1990-02-18',
-        website: '',
-        image: '/assets/images/4.jpg',
-        address: {
-          street: '3745 denny street',
-          zip: '86337',
-          city: 'Ballinasloe',
-          country: 'United States'
-        }
-    },
-    {
-        id: 4,
-        name: 'Diane Hale',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/5.jpg',
-        address: {
-          street: '1459 tara street',
-          zip: '18371',
-          city: 'Bray',
-          country: 'United States'
-        }
-    },
-    {
-        id: 5,
-        name: 'Barry Ford',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/6.jpg',
-        address: {
-          street: '6503 tara street',
-          zip: '43378',
-          city: 'Dungarvan',
-          country: 'United States'
-        }
-    },
-    {
-        id: 6,
-        name: 'Diana Ellis',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/7.jpg',
-        address: {
-          street: '6554 park lane',
-          zip: '43378',
-          city: 'Rush',
-          country: 'United States'
-        }
-    },
-    {
-        id: 7,
-        name: 'Ella Grant',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/8.jpg',
-        address: {
-          street: '2749 church road',
-          zip: '87125',
-          city: 'Clonakilty',
-          country: 'United States'
-        }
-    },
-    {
-        id: 8,
-        name: 'Brent Mason',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/9.jpg',
-        address: {
-          street: '8436 tara street',
-          zip: '59949',
-          city: 'Dundalk',
-          country: 'United States'
-        }
-    },
-    {
-        id: 9,
-        name: 'Sam Thomas',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/10.jpg',
-        address: {
-          street: '2523 park road',
-          zip: '59949',
-          city: 'Drogheda',
-          country: 'United States'
-        }
-    },
-    {
-        id: 10,
-        name: 'Vicky Roberts',
-        email: '',
-        phone: '',
-        birthday: '',
-        website: '',
-        image: '/assets/images/11.jpg',
-        address: {
-          street: '9791 grafton street',
-          zip: '30165',
-          city: 'Galway',
-          country: 'London'
-        }
-    }
+  ContactBuilder.aContactBuilder()
+    .withId(0)
+    .withName('Christoph Burgdorf')
+    .withEmail('christoph@thoughtram.io')
+    .withPhone('+49 000 1111')
+    .withBirthday('1984-01-02')
+    .withWebsite('thoughtram.io')
+    .withImage('/assets/images/0.jpg')
+    .withStreet('thoughtram road 1',)
+    .withZip('65222',)
+    .withCity('Hanover',)
+    .withCountry('Germany')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(1)
+    .withName('Pascal Precht')
+    .withEmail('pascal@thoughtram.io')
+    .withPhone('+49 000 222')
+    .withBirthday('1991-03-31')
+    .withWebsite('thoughtram.io')
+    .withImage('/assets/images/1.jpg')
+    .withStreet('thoughtram road 1')
+    .withZip('65222')
+    .withCity('Hanover')
+    .withCountry('Germany')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(2)
+    .withName('Nicole Hansen')
+    .withEmail('who@car.es')
+    .withPhone('+49 000 333')
+    .withBirthday('1981-03-31')
+    .withWebsite('')
+    .withImage('/assets/images/3.jpg')
+    .withStreet('Who Cares Street 42')
+    .withZip('65222')
+    .withCity('Sun Funcisco')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(3)
+    .withName('Zoe Moore')
+    .withEmail('zoe@moore.com')
+    .withPhone('+49 000 000')
+    .withBirthday('1990-02-18')
+    .withWebsite('')
+    .withImage('/assets/images/4.jpg')
+    .withStreet('3745 denny street')
+    .withZip('86337')
+    .withCity('Ballinasloe')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(4)
+    .withName('Diane Hale')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/5.jpg')
+    .withStreet('1459 tara street')
+    .withZip('18371')
+    .withCity('Bray')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(5)
+    .withName('Barry Ford')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/6.jpg')
+    .withStreet('6503 tara street')
+    .withZip('43378')
+    .withCity('Dungarvan')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(6)
+    .withName('Diana Ellis')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/7.jpg')
+    .withStreet('6554 park lane')
+    .withZip('43378')
+    .withCity('Rush')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(7)
+    .withName('Ella Grant')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/8.jpg')
+    .withStreet('2749 church road')
+    .withZip('87125')
+    .withCity('Clonakilty')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(8)
+    .withName('Brent Mason')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/9.jpg')
+    .withStreet('8436 tara street')
+    .withZip('59949')
+    .withCity('Dundalk')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(9)
+    .withName('Sam Thomas')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/10.jpg')
+    .withStreet('2523 park road')
+    .withZip('59949')
+    .withCity('Drogheda')
+    .withCountry('United States')
+    .build(),
+  ContactBuilder.aContactBuilder()
+    .withId(10)
+    .withName('Vicky Roberts')
+    .withEmail('')
+    .withPhone('')
+    .withBirthday('')
+    .withWebsite('')
+    .withImage('/assets/images/11.jpg')
+    .withStreet('9791 grafton street')
+    .withZip('30165')
+    .withCity('Galway')
+    .withCountry('London').build()
 ];
