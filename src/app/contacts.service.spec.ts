@@ -1,0 +1,17 @@
+/* tslint:disable:no-unused-variable */
+
+import { TestBed, async, inject } from '@angular/core/testing';
+import { ContactsService } from './contacts.service';
+
+describe('Service: Contacts', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [ContactsService]
+    });
+  });
+
+  it('should be a nice service', inject([ContactsService], (service: ContactsService) => {
+    expect(service).toBeTruthy();
+    expect(service.isNice()).toBeTruthy();
+  }));
+});
