@@ -78,7 +78,7 @@ export class ContactBuilder {
   }
 
   withViews(value: number) {
-    this.views = value;
+    this.views = value ? value: 0;
     return this;
   }
 

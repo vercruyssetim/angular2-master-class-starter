@@ -20,7 +20,7 @@ export class ContactDetailComponent implements OnInit {
       this.contact = contact;
       this.contact.views++;
       this.contactService.updateContact(this.contact)
-        .subscribe(contact => this.contact);
+        .subscribe(contact => this.contact = contact);
     });
 
   }
