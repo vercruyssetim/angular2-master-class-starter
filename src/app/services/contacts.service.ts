@@ -14,7 +14,7 @@ export class ContactsService {
   constructor(private http: Http, @Inject(APP_CONFIG) private appConfig) {
   }
 
-  getContacts(): Observable<Array<Contact>>{
+  getContacts(): Observable<Array<Contact>> {
     return this.http.get(this.appConfig.apiEndpoint + '/api/contacts')
       .map(res => res.json())
       .map(data => this.mapToContacts(data.items));
@@ -26,17 +26,23 @@ export class ContactsService {
       .map(data => this.mapToContact(data.item));
   }
 
-  mapToContacts(contacts: Array<Contact>): Array<Contact> {
-    return contacts.map(contact => this.mapToContact(contact));
-  }
-
-  updateContact(contact: Contact) {
+  updateContact(contact: Contact): Observable<Contact> {
     return this.http.put(`${this.appConfig.apiEndpoint}/api/contacts/${contact.id}`, contact)
       .map(res => res.json())
       .map(data => this.mapToContact(data.item));
   }
 
-  mapToContact(contact: Contact): Contact{
+  search(term: String): Observable<Array<Contact>> {
+    return this.http.get(`http://localhost:4201/api/search?text=${term}`)
+      .map(res => res.json())
+      .map(data => this.mapToContacts(data.items))
+  }
+
+  mapToContacts(contacts: Array<Contact>): Array<Contact> {
+    return contacts.map(contact => this.mapToContact(contact));
+  }
+
+  mapToContact(contact: Contact): Contact {
     return ContactBuilder.aContactBuilder()
       .withId(contact.id)
       .withName(contact.name)
