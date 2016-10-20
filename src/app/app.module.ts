@@ -1,18 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule, OpaqueToken} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {ContactsAppRoutes} from "./app.routes";
-import { ContactsAppComponent, ContactListComponent, ContactsHeaderComponent, ContactsFooterComponent, ContactDetailComponent } from './components';
+import {
+  ContactsAppComponent,
+  ContactListComponent,
+  ContactsHeaderComponent,
+  ContactsFooterComponent,
+  ContactDetailComponent,
+  ContactsEditorComponent
+} from "./components";
 import {ContactsService} from "./services/contacts.service";
 import {HttpModule} from "@angular/http";
-import 'rxjs/add/operator/map';
+import "rxjs/add/operator/map";
+import {FormsModule} from "@angular/forms";
+import {DEFAULT_CONFIG} from "./config/app.config";
+import {APP_CONFIG} from "./app.tokens";
 
 @NgModule({
-  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsFooterComponent, ContactListComponent, ContactDetailComponent],
-  imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule],
+  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsFooterComponent, ContactListComponent, ContactDetailComponent, ContactsEditorComponent],
+  imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule, FormsModule],
   bootstrap: [ContactsAppComponent],
-  providers: [ContactsService]
+  providers: [ContactsService, {
+    provide: APP_CONFIG, useValue: DEFAULT_CONFIG
+  }]
 })
 export class ContactsModule {
 
 }
+

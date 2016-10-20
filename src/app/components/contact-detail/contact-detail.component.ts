@@ -10,7 +10,6 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ContactDetailComponent implements OnInit {
   contact: Contact;
-  isOk: string;
 
   constructor(private contactService: ContactsService, private activatedRoute: ActivatedRoute){}
 
