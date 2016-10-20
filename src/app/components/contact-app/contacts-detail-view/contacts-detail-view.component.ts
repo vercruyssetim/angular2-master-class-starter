@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
-import {ContactsService} from "../../services/contacts.service";
-import {Contact} from "../../models/contact";
+import {ContactsService} from "../../../services/contacts.service";
+import {Contact} from "../../../models/contact";
 
 @Component({
   selector: 'trm-contacts-detail-view',

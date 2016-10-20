@@ -1,14 +1,14 @@
-import {Component, OnInit} from "@angular/core";
-import {Contact} from "../../models/contact";
-import {ContactsService} from "../../services/contacts.service";
+import { Component, OnInit } from '@angular/core';
+import {ContactsService} from "../../../services/contacts.service";
+import {Contact} from "../../../models/contact";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'trm-contacts-editor',
-  templateUrl: './contacts-editor.component.html',
-  styleUrls: ['./contacts-editor.component.css']
+  selector: 'trm-contacts-editor-view',
+  templateUrl: './contacts-editor-view.component.html',
+  styleUrls: ['./contacts-editor-view.component.css']
 })
-export class ContactsEditorComponent implements OnInit {
+export class ContactsEditorViewComponent implements OnInit {
   contact: Contact = <Contact>{address:{}};
 
   constructor(private contactService: ContactsService, private activatedRoute: ActivatedRoute, private router: Router){}
@@ -26,4 +26,5 @@ export class ContactsEditorComponent implements OnInit {
   cancel(contact: Contact){
     this.router.navigate(['/contact', this.contact.id]);
   }
+
 }
