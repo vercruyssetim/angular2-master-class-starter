@@ -1,10 +1,23 @@
 <div class="row">
-  <form class="col s12 m7" #form="ngForm" (ngSubmit)="submit(form.value)">
+  <form class="col s12 m7" #form="ngForm" (ngSubmit)="submit(form.value)" novalidate>
     <div class="card">
       <div class="card-content grey-text text-darken-4">
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">account_circle</i><input id="name" name="name" class="validate" ngModel>
+            <i class="material-icons prefix">account_circle</i><input
+            [ngClass]="!form.valid && !form.pristine && !form.untouched ? 'invalid' : 'validate'"
+            #name="ngModel"
+            id="name"
+            name="name"
+            required minlength="3"
+            ngModel>
+            <p *ngIf="name.errors?.required && !name.pristine && !name.untouched">
+              Name is required
+            </p>
+            <p *ngIf="name.errors?.minlength">
+              Name needs to be at least {{name.errors.minlength.requiredLength}} actual is
+              {{name.errors.minlength.actualLength}}
+            </p>
             <label class="active" for="name">Name</label>
           </div>
         </div>
@@ -22,7 +35,8 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">cake</i><input id="birthday" type="date" name="birthday" class="validate" ngModel>
+            <i class="material-icons prefix">cake</i><input id="birthday" type="date" name="birthday" class="validate"
+                                                            ngModel>
             <label class="active" for="birthday">Birthday</label>
           </div>
         </div>
@@ -64,7 +78,7 @@
       </div>
       <div class="card-action">
         <a class="btn">Cancel</a>
-        <button type="submit" class="btn" >Save</button>
+        <button type="submit" class="btn" [disabled]="!form.valid">Save</button>
       </div>
     </div>
   </form>
