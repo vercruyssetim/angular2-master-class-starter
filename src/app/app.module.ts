@@ -16,9 +16,18 @@ import "rxjs/add/operator/map";
 import {FormsModule} from "@angular/forms";
 import {DEFAULT_CONFIG} from "./config/app.config";
 import {APP_CONFIG} from "./app.tokens";
+import {ContactsDetailViewComponent} from "./components/contacts-detail-view/contacts-detail-view.component";
 
 @NgModule({
-  declarations: [ContactsAppComponent, ContactsHeaderComponent, ContactsFooterComponent, ContactListComponent, ContactDetailComponent, ContactsEditorComponent],
+  declarations: [
+    ContactsAppComponent,
+    ContactsHeaderComponent,
+    ContactsFooterComponent,
+    ContactsDetailViewComponent,
+    ContactListComponent,
+    ContactDetailComponent,
+    ContactsEditorComponent
+  ],
   imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule, FormsModule],
   bootstrap: [ContactsAppComponent],
   providers: [ContactsService, {
