@@ -10,7 +10,8 @@ import {
   ContactDetailComponent,
   ContactsDetailViewComponent,
   ContactsEditorComponent,
-  ContactsEditorViewComponent
+  ContactsEditorViewComponent,
+  ContactCreatorComponent
 } from "./components";
 import {ContactsService} from "./services/contacts.service";
 import {HttpModule} from "@angular/http";
@@ -28,7 +29,8 @@ import {APP_CONFIG} from "./app.tokens";
     ContactDetailComponent,
     ContactsDetailViewComponent,
     ContactsEditorComponent,
-    ContactsEditorViewComponent
+    ContactsEditorViewComponent,
+    ContactCreatorComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(ContactsAppRoutes), HttpModule, FormsModule],
   bootstrap: [ContactsAppComponent],

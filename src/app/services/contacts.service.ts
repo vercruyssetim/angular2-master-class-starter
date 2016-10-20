@@ -41,9 +41,15 @@ export class ContactsService {
   }
 
   rawSearch(term: String): Observable<Array<Contact>> {
-    return this.http.get(`http://localhost:4201/api/search?text=${term}`)
+    return this.http.get(`${this.appConfig.apiEndpoint}/api/search?text=${term}`)
       .map(res => res.json())
       .map(data => this.mapToContacts(data.items))
+  }
+
+  addContact(contact: Contact): Observable<Contact>{
+    return this.http.post(`${this.appConfig.apiEndpoint}/api/contacts`, contact)
+      .map(res => res.json())
+      .map(data => this.mapToContact(data.item))
   }
 
   mapToContacts(contacts: Array<Contact>): Array<Contact> {
